@@ -5,15 +5,24 @@
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.loquatz.mangomvptemplate.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.loquatz.mangomvptemplate.services.MyProjectService"/>
+        <applicationService
+            serviceImplementation="com.github.loquatz.mvpmangotempleplugin.services.MyApplicationService" />
+        <projectService
+            serviceImplementation="com.github.loquatz.mvpmangotempleplugin.services.MyProjectService" />
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.loquatz.mangomvptemplate.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="com.github.loquatz.mvpmangotempleplugin.listeners.MyProjectManagerListener"
+            topic="com.intellij.openapi.project.ProjectManagerListener" />
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="mvpmango.SamplePluginTemplateProviderImpl" />
+    </extensions>
 </idea-plugin>
