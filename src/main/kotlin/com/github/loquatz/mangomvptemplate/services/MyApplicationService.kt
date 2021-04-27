@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.loquatz.mangomvptemplate.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.loquatz.mangomvptemplate.MyBundle
 
 class MyApplicationService {
 
